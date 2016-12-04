@@ -13,6 +13,9 @@ describe("Record Store", function(){
   it("has a location", function(){
     assert.equal("London", Store1.city);
   });
+  it("has a total store balance", function(){
+    assert.equal(1000, Store1.balance);
+  });
 
 
 
