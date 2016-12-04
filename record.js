@@ -10,9 +10,11 @@ Record.prototype = {
   },
   title: function() {
     return "the record title: " + this.album;
+  },
+  fullPrice: function() {
+    return this.price;
   }
 };
-
 
 
 
