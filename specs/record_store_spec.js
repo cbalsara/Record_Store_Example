@@ -10,6 +10,9 @@ describe("Record Store", function(){
   it("has a name", function(){
     assert.equal("Rick's", Store1.name);
   });
+  it("has a location", function(){
+    assert.equal("London", Store1.city);
+  });
 
 
 
