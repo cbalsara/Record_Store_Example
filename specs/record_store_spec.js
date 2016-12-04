@@ -18,7 +18,7 @@ describe("Record Store", function(){
   it("has a location", function(){
     assert.equal("London", Store1.city);
   });
-  it("has a total store balance", function(){
+  it("has a starting balance of 1000", function(){
     assert.equal(1000, Store1.balance);
   });
   it("has no records in the store to start", function(){
@@ -29,17 +29,34 @@ describe("Record Store", function(){
     Store1.addRecord(Record2);
     assert.equal( 2, Store1.inventory.length );
   });
+  it("can list full inventory", function(){
+    Store1.addRecord(Record1);
+    var fullList = Store1.fullInventory()
+    assert.equal(Record1, fullList);
+  });
   it("can return a specific record by its name", function(){
     Store1.addRecord(Record1);
     Store1.addRecord(Record2);
     var returnedRecord = Store1.findRecordByName("Metallica")
-    assert.equal("Metallica", returnedRecord.artist);
+    assert.equal(Record1, returnedRecord);
   });
   it("can sell a record", function(){
     Store1.addRecord(Record1);
     Store1.sellRecord(Record1);
     assert.equal(1010.08, Store1.balance);
   });
+
+  it("return a record by its price", function(){
+    Store1.addRecord(Record1);
+    Store1.addRecord(Record2);
+    Store1.findRecordByPrice(Record1)
+    assert.equal( 10.08, Store1.inventory[0].price );
+  });
+  // it("can return the total value of its stock", function(){
+  //   Store1.addRecord(Record1);
+  //   Store1.addRecord(Record2);
+  //   assert.equal( 19.58, Store1.stockValue() );
+  // });
  
 
 
