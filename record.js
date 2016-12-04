@@ -13,7 +13,15 @@ Record.prototype = {
   },
   fullPrice: function() {
     return this.price;
-  }
+  },
+
+
+
+
+
+
+
+  
 };
 
 
