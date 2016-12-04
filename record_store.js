@@ -1,3 +1,5 @@
+var Record = require("./record");
+
 var RecordStore = function(name, city, balance){
   this.name = name;
   this.city = city;
@@ -14,7 +16,17 @@ RecordStore.prototype = {
       return item.artist === recordName;
     });
     return specificRecord;
+  },
+  sellRecord: function(record){
+    this.inventory.pop(record);
+    this.balance += record.price;
   }
+
+
+
+
+
+
 };
 
 

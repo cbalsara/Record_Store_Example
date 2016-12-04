@@ -9,8 +9,8 @@ var Record2;
 describe("Record Store", function(){
   beforeEach(function(){
     Store1 = new RecordStore("Rick's", "London", 1000);
-    Record1 = new Record("Metallica", "Kill Em All", 24.99);
-    Record2 = new Record("Queens of the Stone Age", "Songs for the Deaf", 9.67);
+    Record1 = new Record("Metallica", "Kill Em All", 10.08);
+    Record2 = new Record("Queens of the Stone Age", "Songs for the Deaf", 9.50);
   })
   it("has a name", function(){
     assert.equal("Rick's", Store1.name);
@@ -35,6 +35,12 @@ describe("Record Store", function(){
     var returnedRecord = Store1.findRecordByName("Metallica")
     assert.equal("Metallica", returnedRecord.artist);
   });
+  it("can sell a record", function(){
+    Store1.addRecord(Record1);
+    Store1.sellRecord(Record1);
+    assert.equal(1010.08, Store1.balance);
+  });
+ 
 
 
 
