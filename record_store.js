@@ -8,7 +8,16 @@ var RecordStore = function(name, city, balance){
 RecordStore.prototype = { 
   addRecord: function(record){
     this.inventory.push(record);
+  },
+  listInventory: function(){
+    for (var record of inventory){
+      console.log(item);
+    } 
   }
+
+
+
+
 };
 
 

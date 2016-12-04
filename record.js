@@ -15,13 +15,6 @@ Record.prototype = {
     return this.price;
   },
 
-
-
-
-
-
-
-  
 };
 
 
