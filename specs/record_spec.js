@@ -10,6 +10,9 @@ describe("Record", function(){
   it("has an artist name", function(){
     assert.equal( "the artist is: Artist" , record.name() );
   });
+  it("has a record title", function(){
+    assert.equal( "the record title: title", record.title() );
+  });
 
 
 
