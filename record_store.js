@@ -9,15 +9,12 @@ RecordStore.prototype = {
   addRecord: function(record){
     this.inventory.push(record);
   },
-  listInventory: function(){
-    for (var record of inventory){
-      console.log(item);
-    } 
+  findRecordByName: function(recordName){
+    var specificRecord = this.inventory.find(function(item){
+      return item.artist === recordName;
+    });
+    return specificRecord;
   }
-
-
-
-
 };
 
 

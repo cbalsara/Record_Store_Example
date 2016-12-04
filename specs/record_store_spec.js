@@ -29,11 +29,11 @@ describe("Record Store", function(){
     Store1.addRecord(Record2);
     assert.equal( 2, Store1.inventory.length );
   });
-  it("can list all records in inventory", function(){
+  it("can return a specific record by its name", function(){
     Store1.addRecord(Record1);
     Store1.addRecord(Record2);
-    Store1.listInventory;
-    // assert.equal("Songs for the Deaf" , Store1.inventory[1].album);
+    var returnedRecord = Store1.findRecordByName("Metallica")
+    assert.equal("Metallica", returnedRecord.artist);
   });
 
 
