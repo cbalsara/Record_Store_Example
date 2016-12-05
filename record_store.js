@@ -11,35 +11,39 @@ RecordStore.prototype = {
   addRecord: function(record){
     this.inventory.push(record);
   },
+
   fullInventory: function(){
     for (var type of this.inventory){
       return type;
     };
   },
+
+// use find enumeration
   findRecordByName: function(recordName){
     var specificRecord = this.inventory.find(function(item){
       return item.artist === recordName;
     });
     return specificRecord;
   },
+
   sellRecord: function(record){
     this.inventory.pop(record);
     this.balance += record.price;
   },
+
+// try to use a different type of enumeration 
+// .filter returned an array when i wanted to return a value
   findRecordByPrice: function(cost){
-    return this.inventory.filter(function(record){
+    return this.inventory.find(function(record){
       return record.price === cost;
     });
   },
-  // use a reduce enumeration 
-  // need to acutally get the record.price inside the inventory array
-  stockValue: function(record){
-    var totalPrice = this.findRecordByPrice(record).reduce(function(acc, item){
-      return acc + item}, 0)
-    return totalPrice;
-    }
-
-};
+  
+  stockValue: function(){
+    return this.inventory.reduce( function( acc, record ){ 
+      return acc + record.price }, 0 ); 
+  }
+}
 
 
 
